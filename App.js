@@ -1,4 +1,11 @@
-import { StyleSheet, TextInput, View, Button } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Button,
+  TouchableOpacity,
+  Text,
+} from "react-native";
 import Card from "./components/Card";
 import { useState } from "react";
 
@@ -26,12 +33,15 @@ export default function App() {
           onChangeText={(text) => setText(text)}
           style={styles.input}
         />
-        <Button
-          title="Ganti"
+
+        <TouchableOpacity
           onPress={() => {
             setTitle(text);
           }}
-        />
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Ganti</Text>
+        </TouchableOpacity>
       </View>
       {isOnCart ? (
         <Card
@@ -50,7 +60,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   input: {
-    flexGrow: 1,
+    flex: 1,
     height: 40,
     borderRadius: 4,
     padding: 20,
@@ -61,5 +71,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#d7d7d7",
     alignItems: "center",
     padding: 20,
+  },
+  button: {
+    flex: 1,
+    backgroundColor: "#007ACC",
+    width: "auto",
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: "white",
+    textAlign: "center",
+    padding: 10,
   },
 });
