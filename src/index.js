@@ -1,17 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
-import AsynchronousScreen from "./screens/asynchronous/Asynchronous";
+import CardView from "./screens/CardView";
 import DetailsScreen from "./screens/Details";
 import HomeScreen from "./screens/Home";
-import SynchronousScreen from "./screens/asynchronous/Synchronous";
+import AsynchronousScreen from "./screens/asynchronous/Asynchronous";
 import AsyncAwaitPromiseExample from "./screens/asynchronous/Promise";
-import Card from "./components/Card";
-import CardView from "./screens/CardView";
+import SynchronousScreen from "./screens/asynchronous/Synchronous";
 
-import CallbackPromiseExample from "./screens/asynchronous/Callback";
 import FunctionalComponentWithOOP from "./screens/OOP/OOP";
+import CallbackPromiseExample from "./screens/asynchronous/Callback";
 import FetchScreen from "./screens/networking/Fetch";
+import ReduxCounter from "./screens/ReduxCounter";
 
 const Stack = createStackNavigator();
 
@@ -48,6 +48,11 @@ export default function AppSrc() {
           component={FunctionalComponentWithOOP}
         />
         <Stack.Screen name="Fetch" options={{}} component={FetchScreen} />
+        <Stack.Screen
+          name="ReduxCounter"
+          options={{}}
+          component={ReduxCounter}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -43,6 +43,10 @@ const HomeScreen = ({ navigation }) => {
           title="Go to Fetch"
           onPress={() => navigation.navigate("Fetch")}
         />
+        <Button
+          title="Go to Redux Counter"
+          onPress={() => navigation.navigate("ReduxCounter")}
+        />
       </View>
     </ScrollView>
   );
@@ -51,7 +55,7 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  mainContainer: { padding: 20 },
+  mainContainer: { flexGrow: 1, padding: 20 },
   heading: { fontSize: 24, textAlign: "center", marginVertical: 12 },
   menu: {
     flex: 1,
