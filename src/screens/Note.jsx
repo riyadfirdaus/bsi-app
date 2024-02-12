@@ -45,20 +45,20 @@ const NoteScreen = () => {
           <Text style={styles.buttonText}>Add notes</Text>
         </TouchableOpacity>
       </View>
-
+      <Text style={styles.heading}>Your Notes</Text>
       <View
         style={{
           marginTop: 20,
           flexDirection: "column",
           gap: 10,
-          borderColor: "gray",
-          borderWidth: 1,
         }}
       >
         {notes.length == 0 ? (
           <Text>Please add notes</Text>
         ) : (
-          notes.map((item) => <NoteCard description={item}></NoteCard>)
+          notes.map((item, index) => (
+            <NoteCard key={index} index={index} description={item}></NoteCard>
+          ))
         )}
         {/* <FlatList
           data={notes}
@@ -96,5 +96,9 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     padding: 10,
+  },
+  heading: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
