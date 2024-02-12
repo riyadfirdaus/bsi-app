@@ -23,3 +23,24 @@ export const divide = () => {
 export const reset = () => {
   return { type: "RESET" };
 };
+
+export const addNote = (note) => {
+  return {
+    type: "ADD_NOTE",
+    payload: note,
+  };
+};
+
+export const editNote = (index, newText) => {
+  return {
+    type: "EDIT_NOTE",
+    payload: { index, newText },
+  };
+};
+
+export const removeNote = (index) => {
+  return {
+    type: "REMOVE_NOTE",
+    payload: index,
+  };
+};

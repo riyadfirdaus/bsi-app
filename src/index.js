@@ -12,6 +12,7 @@ import FunctionalComponentWithOOP from "./screens/OOP/OOP";
 import CallbackPromiseExample from "./screens/asynchronous/Callback";
 import FetchScreen from "./screens/networking/Fetch";
 import ReduxCounter from "./screens/ReduxCounter";
+import NoteScreen from "./screens/Note";
 
 const Stack = createStackNavigator();
 
@@ -42,17 +43,10 @@ export default function AppSrc() {
           options={{}}
           component={CallbackPromiseExample}
         />
-        <Stack.Screen
-          name="OOP"
-          options={{}}
-          component={FunctionalComponentWithOOP}
-        />
-        <Stack.Screen name="Fetch" options={{}} component={FetchScreen} />
-        <Stack.Screen
-          name="ReduxCounter"
-          options={{}}
-          component={ReduxCounter}
-        />
+        <Stack.Screen name="OOP" component={FunctionalComponentWithOOP} />
+        <Stack.Screen name="Fetch" component={FetchScreen} />
+        <Stack.Screen name="ReduxCounter" component={ReduxCounter} />
+        <Stack.Screen name="Note" component={NoteScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
